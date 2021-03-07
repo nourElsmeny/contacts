@@ -1,0 +1,63 @@
+<!-- partial -->
+<div class="page-content-wrapper">
+  <div class="page-content-wrapper-inner">
+    <div class="content-viewport">
+      <div class="row">
+        <div class="col-md-8 equel-grid" style='margin: auto'>
+          <div class="grid">
+      <form [formGroup]="searchContact"  (ngSubmit)="filter()" class="t-header-search-box">
+        <div style="margin-top: 50px;" class="input-group">
+          <input data style="height: 40px;" formControlName="data" ngModel type="text" class="form-control" id="inlineFormInputGroup" placeholder="Search" autocomplete="off">
+          <button class="btn btn-primary" type="submit"><i class="mdi mdi-arrow-right-thick"></i></button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+      <div class="row"  *ngIf="contacts.response" >
+        <div class="col-md-12 equel-grid">
+          <div class="grid">
+            <div class="grid-body py-3">
+              <p class="card-title ml-n1">Contact List</p>
+            </div>
+            <div style="width:80%; margin: auto;"  class="table-responsive">
+              <table st class="table table-hover table-sm">
+                <thead>
+                  <tr class="solid-header">
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Mobile Number</th>
+                    <th>Email</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let contact of contacts.response.data; let i = index">
+                    <td>
+                      <small class="text-black font-weight-medium d-block">{{contact.firstName}}</small>
+                    </td>
+                    <td>
+                      <small>{{contact.lastName}}</small>
+                    </td>
+                    <td>
+                      <small>{{contact.mobileNumber}}</small>
+                    </td>
+                    <td>
+                      <small>{{contact.email}}</small>
+                    </td>
+                    <td (click)="deleteContact(contact)"> <i class="mdi mdi-account-minus mdi-1x"></i> </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <a class="border-top px-3 py-2 d-block text-gray" href="#">
+              <small class="font-weight-medium"><i class="mdi mdi-chevron-down mr-2"></i>View All Order History</small>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<!-- page content ends -->

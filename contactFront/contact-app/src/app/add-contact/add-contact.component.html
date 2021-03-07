@@ -1,0 +1,21 @@
+<div class="page-content-wrapper">
+  <div class="page-content-wrapper-inner">
+    <div class="content-viewport">
+      <div class="row">
+        <div class="col-md-8 equel-grid" style='margin: auto'>
+          <form [formGroup]="addContact"  (ngSubmit)="addC()" class="col-md-12 " novalidate>
+            <input style="height: 40px;margin: 10px;" type="text" formControlName="firstName" ngModel required class="form-control"
+              id="firstName" placeholder="firstName" autocomplete="off">
+            <input style="height: 40px; margin: 10px;" type="text" formControlName="lastName" ngModel required class="form-control"
+              id="lastName" placeholder="lastName" autocomplete="off">
+              <input style="height: 40px; margin: 10px;" type="text" formControlName="mobile" ngModel required class="form-control"
+              id="lastName" placeholder="mobileNum" autocomplete="off">
+              <input style="height: 40px; margin: 10px;" type="email" formControlName="email" ngModel required class="form-control"
+              id="lastName" placeholder="email" autocomplete="off">
+            <button type="submit" style="margin: 10px;" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
